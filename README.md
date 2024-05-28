@@ -1,3 +1,9 @@
+# Overview of of the mini project
+
+The project is about finding github users with the help of searchbar UI created with existing api from Github.
+Once the search results about the users is obtained, we can also get to see various info about each Github user as well.
+Additional functionalities like clear users and setAlert warning when we send empty string to the search API is also inplemented. The project is further implemented with hooks and context api. Ths is is a guided project from Udemy.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
