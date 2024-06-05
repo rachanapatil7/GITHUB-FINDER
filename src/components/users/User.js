@@ -1,10 +1,13 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useEffect, Fragment, useContext } from 'react';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
+
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
+
 import Spinner from '../layout/spinner';
-const User = ({ user, getUser, loading, getUserRepos, repos }) => {
+import GithubContext from '../../context/github/githubContext';
+const User = () => {
+  const githubContext = useContext(GithubContext);
+  const { getUser, loading, user, repos, getUserRepos } = githubContext;
   const param = useParams();
   //const [details, setDetails] = useState([]);
   //const [repos, setRepos] = useState([]);
@@ -35,6 +38,7 @@ const User = ({ user, getUser, loading, getUserRepos, repos }) => {
   //     console.log('err', err);
   //   }
   // };
+
   const {
     name,
     company,
@@ -126,15 +130,6 @@ const User = ({ user, getUser, loading, getUserRepos, repos }) => {
       </div>
     </Fragment>
   );
-};
-
-User.propTypes = {
-  user: PropTypes.object.isRequired,
-  getUser: PropTypes.func.isRequired,
-  getUserRepos: PropTypes.func.isRequired,
-  repos: PropTypes.array.isRequired,
-  details: PropTypes.object.isRequired,
-  loading: PropTypes.bool.isRequired,
 };
 
 export default User;
